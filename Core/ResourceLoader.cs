@@ -68,16 +68,16 @@ public static class ResourceLoader {
         if(File.Exists(Path + $"{path}.frag")) {
             Console.WriteLine($"Found Fragment Shader for ID {LogPath}...");
 
-            geom = GL.CreateShader(ShaderType.FragmentShader);
+            frag = GL.CreateShader(ShaderType.FragmentShader);
             try {
-                GL.ShaderSource(geom, File.ReadAllText(Path + $"{path}.frag"));
+                GL.ShaderSource(frag, File.ReadAllText(Path + $"{path}.frag"));
             } catch(FileLoadException e) {
                 Console.WriteLine($"Failed while attempting to load file {path}.frag.");
                 goto Failure;
             }
 
-            GL.CompileShader(geom);
-            string infoLog = GL.GetShaderInfoLog(geom);
+            GL.CompileShader(frag);
+            string infoLog = GL.GetShaderInfoLog(frag);
             if (infoLog != string.Empty) {
                 Console.WriteLine(infoLog);
                 goto Failure;

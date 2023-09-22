@@ -18,6 +18,8 @@ public class Window : GameWindow
     protected override void OnLoad() {
         base.OnLoad();
 
+        //GL.Viewport(0, 0, this.Size.X, this.Size.Y);
+
         World.Start();
     }
 
@@ -43,6 +45,8 @@ public class Window : GameWindow
 
     protected override void OnResize(ResizeEventArgs e) {
         base.OnResize(e);
+
+        GL.Viewport(0, 0, e.Width, e.Height);
 
         World.RefreshRendering();
     }
