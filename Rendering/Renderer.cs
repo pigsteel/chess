@@ -12,7 +12,6 @@ public class Renderer {
 
     public void Initialize(Shader shader) {
         this.shader = shader;
-
     }
 
     /// <summary>
@@ -20,11 +19,11 @@ public class Renderer {
     /// </summary>
     /// <param name="camera"></param>
     public void Render(ref Mesh mesh) {
-        shader.Use();
+        World.shader.Use();
         
         if(mesh.Initialized) {
             GL.BindVertexArray(mesh.VAO);
-            GL.DrawArrays(PrimitiveType.Triangles, 0, 3);
+            GL.DrawArrays(PrimitiveType.Triangles, 0, mesh.Length);
         }
     }
 

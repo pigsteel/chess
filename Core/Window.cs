@@ -11,12 +11,20 @@ namespace chess;
 
 public class Window : GameWindow 
 {
+    private int ScreenSizeVBO;
+
     public Window(int width, int height, string title) : base(GameWindowSettings.Default, new NativeWindowSettings() { Size = (width, height), Title = title }) {
 
     }
     
     protected override void OnLoad() {
         base.OnLoad();
+        ScreenSizeVBO = GL.GenBuffer();
+
+        //GL.BindBuffer(BufferTarget.UniformBuffer, ScreenSizeVBO);
+        //GL.BufferData(BufferTarget.UniformBuffer, 2 * sizeof(float), new float[] {0, 0}, BufferUsageHint.StaticDraw);
+        //GL.BindBufferRange(BufferRangeTarget.UniformBuffer, 2, ScreenSizeVBO, 0, 2 * sizeof(float));
+        GL.Uniform2(1, 0d, 0d);
 
         //GL.Viewport(0, 0, this.Size.X, this.Size.Y);
 
@@ -35,6 +43,8 @@ public class Window : GameWindow
         base.OnRenderFrame(e);
 
         GL.Clear(ClearBufferMask.ColorBufferBit);
+        World.shader.Use();
+        GL.Uniform2(1, Size);
 
         World.UpdateWorld(e.Time);
         World.RenderWorld(e.Time);

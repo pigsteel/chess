@@ -11,7 +11,7 @@ public class TestObject : GameObject {
     {
         base.Start();
 
-        mesh.SetVertices(Shapes.Triangle(0.0f, 0.0f, 0.5f, 0.5f));
+        mesh.SetVertices(Shapes.Square(0.0f, 0.0f, 100.0f, 100.0f));
         mesh.Package();
     }
 

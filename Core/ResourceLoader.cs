@@ -87,6 +87,11 @@ public static class ResourceLoader {
         }
 
         GL.LinkProgram(handle);
+        string programLog = GL.GetProgramInfoLog(handle);
+        if (programLog != string.Empty) {
+            Console.WriteLine(programLog);
+            goto Failure;
+        }
 
         DeleteShaderIfNull(handle, vert);
         DeleteShaderIfNull(handle, geom);
