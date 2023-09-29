@@ -5,26 +5,29 @@ using chess.Rendering;
 namespace chess.Game;
 
 public class TestObject : GameObject {
-    Mesh mesh = new Mesh();
+    public Mesh mesh;
+    public Shader shader;
 
     public override void Start()
     {
         base.Start();
-
-        mesh.SetVertices(Shapes.Square(-1.0f, -1.0f, 1.0f, 1.0f));
+        mesh = new Mesh();
+        mesh.SetVertices(Shapes.Square(-100.0f, -100.0f, 100.0f, 100.0f));
         mesh.Package();
+        shader = new Shader(new string[] {@"shader.vert", @"shader.frag"});
     }
 
-    public override void Initialize()
+    public void Initialize()
     {
-        base.Initialize();
     }
 
-    public override void Render()
+    public override void Update() {
+        Render();
+    }
+
+    public void Render()
     {
-        renderer.Render(ref mesh);
-
-        base.Render();
+        shader?.Use();
+        mesh?.Render(shader);
     }
-
 }

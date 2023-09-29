@@ -1,10 +1,7 @@
 namespace chess;
 
-public abstract class GameObject : ITransform, IEntity, IRenderable
+public abstract class GameObject
 {
-    public Transform transform { get; set; }
-    public Renderer renderer { get; set; }
-
     public bool Awake {get; set;}
 
     public GameObject() {
@@ -16,28 +13,18 @@ public abstract class GameObject : ITransform, IEntity, IRenderable
         
     }
 
-    public virtual void Initialize()
-    {
-        
-    }
-
     public virtual void LateUpdate()
     {
         
     }
 
-    public virtual void Render() {
-        
-    }
-
     public virtual void Start()
     {
-        renderer = new Renderer();
-        renderer.Initialize(new Rendering.Shader("shader"));
+
     }
 
     public virtual void Update()
     {
-        //throw new NotImplementedException();
+        
     }
 }

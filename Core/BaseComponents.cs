@@ -4,19 +4,9 @@ using System.Numerics;
 
 namespace chess;
 
-public interface IEntity {
-    public abstract void Start();
-
-    public abstract void Update();
-
-    public abstract void FixedUpdate();
-
-    public abstract void LateUpdate();
-}
-
 public interface IRenderable {
-    Renderer renderer {get; set;}
-
+    Mesh mesh {get; set;}
+    
     public void Initialize();
 
     public void Render();
@@ -36,30 +26,14 @@ public class Transform
     /// </summary>
     public Transform() 
     {
-        Rotation = Quaternion.Identity;
+
     }
 
-    public Vector3 Position { get { return Position; } set { Position = value; OnTransformUpdate?.Invoke(); } }
+    public Vector2 Position { get { return Position; } set { Position = value; OnTransformUpdate?.Invoke(); } }
 
-    public Quaternion Rotation
-    { 
-        get { return Rotation; }
-        set 
-        {
-            Rotation = value;
-            Up = Vector3.Transform(-Vector3.UnitY, Rotation);
-            Right = Vector3.Transform(Vector3.UnitX, Rotation);
-            Forward = Vector3.Transform(Vector3.UnitZ, Rotation);
-            OnTransformUpdate?.Invoke();
-        }
-    }
+    public float Rotation;
     // Current scale of the object
-    public Vector3 Scale { get; set; }
-
-    // The Up, Foward, and Left vectors of this transform
-    public Vector3 Up { get; set; }
-    public Vector3 Forward { get; set; }
-    public Vector3 Right { get; set; }
+    public Vector2 Scale { get; set; }
 
     public event Action OnTransformUpdate;
 }

@@ -2,7 +2,7 @@ using OpenTK.Mathematics;
 
 namespace chess;
 
-public class Camera : ITransform, IEntity
+public class Camera : ITransform
 {
     public Transform transform { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 

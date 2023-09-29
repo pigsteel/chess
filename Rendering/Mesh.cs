@@ -3,12 +3,13 @@ using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 using Vector3 = OpenTK.Mathematics.Vector3;
 using Matrix3x2 = OpenTK.Mathematics.Vector3;
+using chess.Rendering;
 
 namespace chess;
 
 public class Mesh {
-    protected float[]? vertices = null;
-    protected uint[]? indices = null;
+    protected float[] vertices = new float[] {};
+    protected uint[] indices = new uint[] {};
     public Matrix3 modelMatrix {get; private set;}
 
     public int Length {
@@ -65,5 +66,13 @@ public class Mesh {
             } else {
             throw new Exception("No vertex data to package!");
         }
+    }
+
+    public void Render(Shader shader) {
+        shader.SetMatrix3(shader.GetUniformLocation("modelMatrix"), modelMatrix);
+        shader.SetVector2(shader.GetUniformLocation("screenSize"), Program.GetWindowSize());
+
+        GL.BindVertexArray(VAO);
+        GL.DrawArrays(PrimitiveType.Triangles, 0, Length);
     }
 }

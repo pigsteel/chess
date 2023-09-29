@@ -21,13 +21,6 @@ public class Window : GameWindow
         base.OnLoad();
         ScreenSizeVBO = GL.GenBuffer();
 
-        //GL.BindBuffer(BufferTarget.UniformBuffer, ScreenSizeVBO);
-        //GL.BufferData(BufferTarget.UniformBuffer, 2 * sizeof(float), new float[] {0, 0}, BufferUsageHint.StaticDraw);
-        //GL.BindBufferRange(BufferRangeTarget.UniformBuffer, 2, ScreenSizeVBO, 0, 2 * sizeof(float));
-        GL.Uniform2(1, 0d, 0d);
-
-        //GL.Viewport(0, 0, this.Size.X, this.Size.Y);
-
         World.Start();
     }
 
@@ -55,8 +48,12 @@ public class Window : GameWindow
         base.OnResize(e);
 
         GL.Viewport(0, 0, e.Width, e.Height);
-        World.GetShader("shader").SetVector2(1, e.Size);
 
         World.RefreshRendering();
+    }
+
+    public void PassWindowSize(int handle) {
+        GL.UseProgram(handle);
+        GL.Uniform2(GL.GetAttribLocation(handle, "screenSize"), this.Size);
     }
 }

@@ -7,7 +7,7 @@ namespace chess.Rendering;
 
 public static class Shapes {
 
-    public static float[]? Triangle(float x1, float y1, float x2, float y2, float x3, float y3) {
+    public static float[] Triangle(float x1, float y1, float x2, float y2, float x3, float y3) {
         return new float[] {
         x1, y1, 0.0f, //Bottom-left vertex
         x2, y2, 0.0f, //Bottom-right vertex
@@ -15,7 +15,7 @@ public static class Shapes {
         };
     }
 
-    public static float[]? Triangle(Vector2 first, Vector2 second, Vector2 third) {
+    public static float[] Triangle(Vector2 first, Vector2 second, Vector2 third) {
         return new float[] {
             first.X, first.Y, 0.0f,
             second.X, second.Y, 0.0f,
@@ -23,7 +23,7 @@ public static class Shapes {
         };
     }
 
-    public static float[]? Triangle(Vector3 first, Vector3 second, Vector3 third) {
+    public static float[] Triangle(Vector3 first, Vector3 second, Vector3 third) {
         return new float[] {
             first.X, first.Y, first.Z,
             second.X, second.Y, second.Z,
@@ -31,7 +31,7 @@ public static class Shapes {
         };
     }
 
-    public static float[]? Triangle(float x1, float y1, float x2, float y2) {
+    public static float[] Triangle(float x1, float y1, float x2, float y2) {
         return new float[] {
         x1, y1, 0.0f, // First vertex
         x2, y2, 0.0f, // Top vertex
@@ -39,7 +39,7 @@ public static class Shapes {
         };
     }
 
-    public static float[]? Triangle(Vector2 first, Vector2 second) {
+    public static float[] Triangle(Vector2 first, Vector2 second) {
         return new float[] {
             first.X, first.Y, 0.0f,
             second.X, second.Y, 0.0f,
@@ -47,7 +47,7 @@ public static class Shapes {
         };
     }
 
-    public static float[]? Square(float x1, float y1, float x2, float y2, ref uint[] indices) {
+    public static float[] Square(float x1, float y1, float x2, float y2, ref uint[] indices) {
         indices = new uint[] {
             0, 1, 2, 2, 1, 3
         };
@@ -60,7 +60,7 @@ public static class Shapes {
         };
     }
 
-    public static float[]? Square(float x1, float y1, float x2, float y2) {
+    public static float[] Square(float x1, float y1, float x2, float y2) {
         return new float[] {
             x1, y1, 0.0f, //0
             x2, y1, 0.0f, //1
@@ -71,7 +71,7 @@ public static class Shapes {
         };
     }
 
-    public static float[]? Square(Vector2 first, Vector2 second) {
+    public static float[] Square(Vector2 first, Vector2 second) {
         return new float[] {
             first.X, first.Y, 0.0f, //0
             second.X, first.Y, 0.0f, //1
@@ -83,36 +83,36 @@ public static class Shapes {
     }
 
 
-    public static float[]? circle() {
+    public static float[] circle() {
         return null;
     }
 
-    public static float[]? line(float x1, float y1, float x2, float y2) {
+    public static float[] line(float x1, float y1, float x2, float y2) {
         return new float[] {
             x1, y1, 0.0f,
             x2, y2, 0.0f
         };
     }
 
-    public static float[]? line(Vector2 first, Vector2 second) {
+    public static float[] line(Vector2 first, Vector2 second) {
         return new float[] {
             first.X, first.Y, 0.0f,
             second.X, second.Y, 0.0f
         };
     }
 
-    public static float[]? line(Vector3 first, Vector3 second) {
+    public static float[] line(Vector3 first, Vector3 second) {
         return new float[] {
             first.X, first.Y, first.Z,
             second.X, second.Y, second.Z
         };
     }
 
-    public static float[]? quad() {
+    public static float[] quad() {
         return null;
     }
 
-    public static float[]? rect() {
+    public static float[] rect() {
         return null;
     }
 }
