@@ -2,12 +2,14 @@ using System.Numerics;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
 using Vector3 = OpenTK.Mathematics.Vector3;
+using Matrix3x2 = OpenTK.Mathematics.Vector3;
 
 namespace chess;
 
 public class Mesh {
     protected float[]? vertices = null;
     protected uint[]? indices = null;
+    public Matrix3 modelMatrix {get; private set;}
 
     public int Length {
         get {
@@ -26,6 +28,8 @@ public class Mesh {
         VBO = GL.GenBuffer();
         EBO = GL.GenBuffer();
         VAO = GL.GenVertexArray();
+
+        modelMatrix = Matrix3.Identity;
     }
 
     public void SetVertices(float[] vertices) {

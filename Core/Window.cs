@@ -43,8 +43,6 @@ public class Window : GameWindow
         base.OnRenderFrame(e);
 
         GL.Clear(ClearBufferMask.ColorBufferBit);
-        World.shader.Use();
-        GL.Uniform2(1, Size);
 
         World.UpdateWorld(e.Time);
         World.RenderWorld(e.Time);
@@ -57,6 +55,7 @@ public class Window : GameWindow
         base.OnResize(e);
 
         GL.Viewport(0, 0, e.Width, e.Height);
+        World.GetShader("shader").SetVector2(1, e.Size);
 
         World.RefreshRendering();
     }

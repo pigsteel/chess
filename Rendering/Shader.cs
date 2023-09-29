@@ -12,7 +12,6 @@ namespace chess.Rendering
     public class Shader
     {
         private int handle;
-        public string name { get; set; }
 
         /// <summary>
         /// Shader constructor
@@ -22,7 +21,6 @@ namespace chess.Rendering
         public Shader(string name)
         {
             handle = ResourceLoader.RequestShaderPipeline(name);
-            this.name = name;
         }
 
         /// <summary>
@@ -42,22 +40,50 @@ namespace chess.Rendering
         /// </summary>
         /// <param name="uniformName">The uniform name</param>
         /// <returns></returns>
-        public int GetUniformLocation(string uniformName) { return GL.GetUniformLocation(handle, uniformName); }
+        public int GetUniformLocation(string uniformName) { 
+            this.Use();
+            return GL.GetUniformLocation(handle, uniformName);     
+        }
 
         #region Set Uniforms        
 
         // Sets a uniform float
-        public void SetFloat(int location, float value) { GL.Uniform1(location, value); }
+        public void SetFloat(int location, float value) { 
+            this.Use();
+            GL.Uniform1(location, value); 
+        }
         // Sets a uniform int
-        public void SetInt(int location, int value) { GL.Uniform1(location, value); }
+        public void SetInt(int location, int value) { 
+            this.Use();
+            GL.Uniform1(location, value); 
+        }
         // Sets a uniform Vector2
-        public void SetVector2(int location, Vector2 value) { GL.Uniform2(location, value.X, value.Y); }
+        public void SetVector2(int location, Vector2 value) {
+            this.Use(); 
+            GL.Uniform2(location, value.X, value.Y); 
+        }
         // Sets a uniform Vector3
-        public void SetVector3(int location, Vector3 value) { GL.Uniform3(location, value.X, value.Y, value.Z); }
+        public void SetVector3(int location, Vector3 value) { 
+            this.Use();
+            GL.Uniform3(location, value.X, value.Y, value.Z); 
+        }
         // Sets a uniform Vector4
-        public void SetVector4(int location, Vector4 value) { GL.Uniform4(location, value.X, value.Y, value.Z, value.W); }
+        public void SetVector4(int location, Vector4 value) { 
+            this.Use();
+            GL.Uniform4(location, value.X, value.Y, value.Z, value.W); 
+        }
+
+        // Sets a uniform Matrix3
+        public void SetMatrix3(int location, Matrix3 value) { 
+            this.Use();
+            GL.UniformMatrix3(location, false, ref value); 
+        }
+
         // Sets a uniform Matrix4
-        public void SetMatrix4(int location, Matrix4 value) { GL.UniformMatrix4(location, false, ref value); }
+        public void SetMatrix4(int location, Matrix4 value) { 
+            this.Use();
+            GL.UniformMatrix4(location, false, ref value); 
+        }
 
         #endregion  
 

@@ -8,17 +8,18 @@ namespace chess;
 
 public static class World {
     static List<GameObject> gameObjects = new List<GameObject>();
+    static Dictionary<string, Shader> shaders = new Dictionary<string, Shader>();
 
     public static Camera camera {get; private set;}
 
-    public static Shader shader;
+    public static int flash = 0;
 
     public static void Start() {
         camera = new Camera();
         gameObjects.Add(new TestObject());
-        shader = new Shader("shader");
+        shaders.Add("shader", new Shader("shader"));
 
-        Color(1);
+        Color(1.0f, 0, 0);
 
         RefreshRendering();
 
@@ -41,6 +42,16 @@ public static class World {
         foreach(GameObject? gameObject in gameObjects) {
             gameObject?.Update();
         }
+
+        if (flash <= 100) {
+            flash++;
+            Color(1, 0, 0);
+        } else if (flash > 100 && flash <= 200) {
+            flash++;
+            Color(0, 1, 0);
+        } else {
+            flash = 0;
+        }
     }
 
     public static void RenderWorld(double delta) {
@@ -56,14 +67,18 @@ public static class World {
     }
 
     public static void Color(OpenTK.Mathematics.Vector3 i) {
-        GL.Uniform3(2, i);
+        GetShader("shader").SetVector3(2, i);
     }
 
     public static void Color(float i) {
-        GL.Uniform3(2, i, i, i);
+        GetShader("shader").SetVector3(2, new OpenTK.Mathematics.Vector3(i, i, i));
     }
 
     public static void Color(float r, float g, float b) {
-        GL.Uniform3(2, r, g, b);
+        GetShader("shader").SetVector3(2, new OpenTK.Mathematics.Vector3(r, g, b));
+    }
+
+    public static Shader GetShader(string id) {
+        return shaders[id];
     }
 }
