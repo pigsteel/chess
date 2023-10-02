@@ -13,7 +13,7 @@ public class ShaderModule : ILoadable<ShaderModule> {
     /// <param name="fileName"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
-    public static ShaderModule LoadResource(byte[] bytes, string fileName) {
+    public static ShaderModule LoadResource(ref byte[] bytes, string fileName) {
         Console.WriteLine($"Compiling ShaderModule {fileName}...");
 
         string extension = Path.GetExtension(fileName).ToUpper();
@@ -44,6 +44,11 @@ public class ShaderModule : ILoadable<ShaderModule> {
         }
 
         return new ShaderModule { handle = thandle };
+    }
+
+    public static ShaderModule LoadResource(ref FileStream stream, string fileName)
+    {
+        throw new NotImplementedException();
     }
 
     public void Destroy() {

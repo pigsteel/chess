@@ -4,7 +4,7 @@ using chess.Rendering;
 
 namespace chess;
 
-public class Mesh {
+public class Model {
     protected float[] vertices = new float[] {};
     protected uint[] indices = new uint[] {};
     public Matrix3 modelMatrix {get; private set;}
@@ -22,7 +22,7 @@ public class Mesh {
 
     public bool Initialized;
 
-    public Mesh() {
+    public Model() {
         VBO = GL.GenBuffer();
         VAO = GL.GenVertexArray();
 
@@ -53,8 +53,11 @@ public class Mesh {
                 GL.BufferData(BufferTarget.ElementArrayBuffer, indices.Length * sizeof(uint), indices, BufferUsageHint.DynamicDraw);
             }
 
-            GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), 0);
             GL.EnableVertexAttribArray(0);
+            GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 5 * sizeof(float), 0);
+
+            GL.EnableVertexAttribArray(5);
+            GL.VertexAttribPointer(5, 2, VertexAttribPointerType.Float, false, 5 * sizeof(float), 3 * sizeof(float));
 
             Initialized = true;
 
@@ -74,19 +77,19 @@ public class Mesh {
     }
 
 
-    public static Mesh Square(float x1, float y1, float x2, float y2) {
-        Mesh mesh = new Mesh();
-        mesh.SetIndices(new uint[] {
+    public static Model Square(float x1, float y1, float x2, float y2) {
+        Model model = new Model();
+        model.SetIndices(new uint[] {
             0, 1, 2, 2, 1, 3
         });
 
-        mesh.SetVertices(new float[] {
-            x1, y1, 0.0f,
-            x2, y1, 0.0f,
-            x1, y2, 0.0f,
-            x2, y2, 0.0f
+        model.SetVertices(new float[] {
+            x1, y1, 0.0f, 0.0f, 0.0f,
+            x2, y1, 0.0f, 1.0f, 0.0f,
+            x1, y2, 0.0f, 0.0f, 1.0f,
+            x2, y2, 0.0f, 1.0f, 1.0f
         });
 
-        return mesh;
+        return model;
     }
 }

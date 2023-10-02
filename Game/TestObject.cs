@@ -1,20 +1,22 @@
 
 using OpenTK.Graphics.OpenGL;
 using chess.Rendering;
+using chess.Core;
 
 namespace chess.Game;
 
 public class TestObject : GameObject {
-    public Mesh mesh;
+    public Model model;
     public Shader shader;
+    public Texture texture;
 
     public override void Start()
     {
         base.Start();
-        mesh = new Mesh();
-        mesh.SetVertices(Shapes.Square(-100.0f, -100.0f, 100.0f, 100.0f));
-        mesh.Package();
+        model = Model.Square(-100.0f, -100.0f, 100.0f, 100.0f);
+        model.Package();
         shader = new Shader(new string[] {@"shader.vert", @"shader.frag"});
+        texture = Resources.Load<Texture>("jed.webp");
     }
 
     public void Initialize()
@@ -28,6 +30,6 @@ public class TestObject : GameObject {
     public void Render()
     {
         shader?.Use();
-        mesh?.Render(shader);
+        model?.Render(shader);
     }
 }

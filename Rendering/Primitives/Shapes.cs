@@ -47,19 +47,6 @@ public static class Shapes {
         };
     }
 
-    public static float[] Square(float x1, float y1, float x2, float y2, ref uint[] indices) {
-        indices = new uint[] {
-            0, 1, 2, 2, 1, 3
-        };
-
-        return new float[] {
-            x1, y1, 0.0f,
-            x2, y1, 0.0f,
-            x1, y2, 0.0f,
-            x2, y2, 0.0f
-        };
-    }
-
     public static float[] Square(float x1, float y1, float x2, float y2) {
         return new float[] {
             x1, y1, 0.0f, //0

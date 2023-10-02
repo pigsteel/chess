@@ -4,6 +4,7 @@ layout(location = 1) uniform vec2 screenSize;
 layout(location = 2) uniform vec3 tint;
 layout(location = 3) uniform mat3 modelMatrix;
 layout(location = 4) uniform mat3 viewMatrix;
+layout(location = 5) uniform vec2 aTexCoord;
 
 void main()
 {

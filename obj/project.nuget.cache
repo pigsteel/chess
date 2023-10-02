@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+AcUH1gGtHQpzB+Z7tjPo9s0aZyjgzTyupcg2Ux3G7N7odYsyy+SPGBXUUCscDrXT05kX0Sp2EFzDKYBkX3d1Q==",
+  "dgSpecHash": "U2baPPENMNag580k8N5SUUaXE2bNAlcoSjHtlJWI6HdUmWR7r4eONIVABaqJTbgQ/7UcPxydfKTaq1FRWcqkoQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\piggy\\Documents\\GitHub\\chess\\chess.csproj",
+  "projectFilePath": "c:\\Users\\piggy\\OneDrive\\Documents\\GitHub\\chess\\chess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\piggy\\.nuget\\packages\\opentk\\4.8.0\\opentk.4.8.0.nupkg.sha512",
     "C:\\Users\\piggy\\.nuget\\packages\\opentk.audio.openal\\4.8.0\\opentk.audio.openal.4.8.0.nupkg.sha512",
@@ -15,6 +15,7 @@
     "C:\\Users\\piggy\\.nuget\\packages\\opentk.windowing.common\\4.8.0\\opentk.windowing.common.4.8.0.nupkg.sha512",
     "C:\\Users\\piggy\\.nuget\\packages\\opentk.windowing.desktop\\4.8.0\\opentk.windowing.desktop.4.8.0.nupkg.sha512",
     "C:\\Users\\piggy\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\4.8.0\\opentk.windowing.graphicslibraryframework.4.8.0.nupkg.sha512",
+    "C:\\Users\\piggy\\.nuget\\packages\\stbimagesharp\\2.27.13\\stbimagesharp.2.27.13.nupkg.sha512",
     "C:\\Users\\piggy\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
   ],
   "logs": []

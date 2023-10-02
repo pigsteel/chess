@@ -1,11 +1,6 @@
-using System.Numerics;
-using System.Reflection.Metadata.Ecma335;
-using chess.Rendering;
 using OpenTK.Graphics.OpenGL4;
-using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
-using OpenTK.Windowing.GraphicsLibraryFramework;
 
 namespace chess;
 
@@ -54,6 +49,6 @@ public class Window : GameWindow
 
     public void PassWindowSize(int handle) {
         GL.UseProgram(handle);
-        GL.Uniform2(GL.GetAttribLocation(handle, "screenSize"), this.Size);
+        GL.Uniform2(GL.GetAttribLocation(handle, "screenSize"), Size);
     }
 }
