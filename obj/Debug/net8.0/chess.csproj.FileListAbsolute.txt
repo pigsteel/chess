@@ -63,3 +63,4 @@ c:\Users\piggy\OneDrive\Documents\GitHub\chess\obj\Debug\net8.0\chess.pdb
 c:\Users\piggy\OneDrive\Documents\GitHub\chess\obj\Debug\net8.0\chess.genruntimeconfig.cache
 c:\Users\piggy\OneDrive\Documents\GitHub\chess\obj\Debug\net8.0\ref\chess.dll
 c:\Users\piggy\OneDrive\Documents\GitHub\chess\bin\Debug\net8.0\StbImageSharp.dll
+c:\Users\piggy\Documents\GitHub\chess\bin\Debug\net8.0\StbImageSharp.dll
