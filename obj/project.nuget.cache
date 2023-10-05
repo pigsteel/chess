@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U2baPPENMNag580k8N5SUUaXE2bNAlcoSjHtlJWI6HdUmWR7r4eONIVABaqJTbgQ/7UcPxydfKTaq1FRWcqkoQ==",
+  "dgSpecHash": "taivia/9Law3j6VI/zzAKqIPT4W9JZKY9dKY3DJXFZV62HfPNRp0M7i8KvWYldznIQb3HJ3khQsUrdaJgpjuvg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\piggy\\OneDrive\\Documents\\GitHub\\chess\\chess.csproj",
+  "projectFilePath": "c:\\Users\\piggy\\Documents\\GitHub\\chess\\chess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\piggy\\.nuget\\packages\\opentk\\4.8.0\\opentk.4.8.0.nupkg.sha512",
     "C:\\Users\\piggy\\.nuget\\packages\\opentk.audio.openal\\4.8.0\\opentk.audio.openal.4.8.0.nupkg.sha512",

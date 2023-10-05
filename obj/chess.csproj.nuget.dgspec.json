@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\piggy\\OneDrive\\Documents\\GitHub\\chess\\chess.csproj": {}
+    "c:\\Users\\piggy\\Documents\\GitHub\\chess\\chess.csproj": {}
   },
   "projects": {
-    "c:\\Users\\piggy\\OneDrive\\Documents\\GitHub\\chess\\chess.csproj": {
+    "c:\\Users\\piggy\\Documents\\GitHub\\chess\\chess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\piggy\\OneDrive\\Documents\\GitHub\\chess\\chess.csproj",
+        "projectUniqueName": "c:\\Users\\piggy\\Documents\\GitHub\\chess\\chess.csproj",
         "projectName": "chess",
-        "projectPath": "c:\\Users\\piggy\\OneDrive\\Documents\\GitHub\\chess\\chess.csproj",
+        "projectPath": "c:\\Users\\piggy\\Documents\\GitHub\\chess\\chess.csproj",
         "packagesPath": "C:\\Users\\piggy\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\piggy\\OneDrive\\Documents\\GitHub\\chess\\obj\\",
+        "outputPath": "c:\\Users\\piggy\\Documents\\GitHub\\chess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\piggy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\piggy\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,6 +32,9 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "default"
         }
       },
       "frameworks": {
@@ -65,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.1.23463.5/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.7.23376.3\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -11,6 +11,8 @@ public static class Resources {
         byte[] buffer = new byte[info.Length];
         stream.Read(buffer, 0, buffer.Length);
 
+        Console.WriteLine($"Byte buffer loaded of length {buffer.Length.ToString()}");
+
         return T.LoadResource(ref buffer, file);
     }
 }
